@@ -83,39 +83,6 @@ class GraphWindow(QWidget):
         self.ax.figure.tight_layout()
         self.ax.grid(True)
         self.graph.draw()
-
-    # def draw_graph(self):
-    #         self.ax.clear()
-    #         choice = self.graph_type_combo.currentText()
-
-    #         if choice == "Choose Graph":
-    #             QMessageBox.warning(self, "Warning", "Please select a graph type before drawing.")
-    #             return
-
-    #         time_list = self.main.point_time_list
-    #         temp_list = self.main.point1_temp_list
-    #         dtemp_list = self.main.point1_dt_list
-
-    #         if not time_list:
-    #             QMessageBox.warning(self, "Warning", "No data available to draw.")
-    #             return
-
-    #         if choice == "Temp vs Time":
-    #                 self.ax.plot(time_list, temp_list, label='T(t)', color='blue')
-    #                 self.ax.set_title("Temperature vs Time", fontsize=18)
-    #                 self.ax.set_ylabel("Temperature (°C)", fontsize=14)
-    #         elif choice == "dT/dt vs Time":
-    #             if len(dtemp_list) != len(time_list):
-    #                 dtemp_list = dtemp_list[:len(time_list)]
-    #             self.ax.plot(time_list, dtemp_list, label='dT/dt', color='red')
-    #             self.ax.set_title("dT/dt vs Time", fontsize=18)
-    #             self.ax.set_ylabel("Rate of Change (°C/s)", fontsize=14)
-
-    #         self.ax.set_xlabel("Time (seconds)", fontsize=14)
-    #         self.ax.legend()
-    #         self.ax.figure.tight_layout()
-    #         self.ax.grid(True)
-    #         self.graph.draw()
     
     def clear_graph(self):
         self.ax.clear()
@@ -160,4 +127,5 @@ if __name__ == "__main__":
     app = QApplication()
     graph_window = GraphWindow()
     graph_window.show()
+
     app.exec()
